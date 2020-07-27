@@ -1,0 +1,15 @@
+{% extends 'encyclopedia/layout.html' %}
+{% block title %}
+    {{ keyword }} - Search results - Wiki
+{% endblock %}
+{% block body %}
+    <ul>
+        <i>The page <b>{{ keyword }}</b> does not exist, please check similar results below.</i></h3>
+
+        {% for title in results %}
+            <li> <a href="{% url 'render_entry' title %}">{{ title }}</a> </li>
+        {% empty %} 
+            Sorry, your search didn't match any articles.
+        {% endfor %}
+    </ul>
+{% endblock %}
