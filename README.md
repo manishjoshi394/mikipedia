@@ -1,2 +1,2 @@
-# pikipedia
+# mikipedia
 Wikipedia but using Markdown. 
