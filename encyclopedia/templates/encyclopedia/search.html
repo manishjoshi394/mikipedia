@@ -4,7 +4,7 @@
 {% endblock %}
 {% block body %}
     <ul>
-        <i>The page <b>{{ keyword }}</b> does not exist, please check similar results below.</i></h3>
+        <h3><i>The page <b>{{ keyword }}</b> does not exist, please check similar results below.</i></h3>
 
         {% for title in results %}
             <li> <a href="{% url 'render_entry' title %}">{{ title }}</a> </li>

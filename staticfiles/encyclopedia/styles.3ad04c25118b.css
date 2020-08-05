@@ -14,12 +14,8 @@ h1 {
 
 textarea {
     resize: none;
-    height: 80vh;
+    height: 50%;
     width: 80%;
-}
-
-input[readonly] {
-    background-color:lightgrey;
 }
 
 .main {

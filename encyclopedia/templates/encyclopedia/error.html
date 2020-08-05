@@ -4,5 +4,8 @@
 {% endblock %}
 
 {% block body %}
-Oops! It's not you, it's us!
+    <i>
+        <h3>{{ error_title }}</h3>
+        <h6>{{ error_msg|safe }}</h6>
+    </i>
 {% endblock %}
