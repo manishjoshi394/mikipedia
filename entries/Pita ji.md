@@ -1,0 +1,1 @@
+Pita ji unhe kahte jo tumhari maiya chod chuke hote h

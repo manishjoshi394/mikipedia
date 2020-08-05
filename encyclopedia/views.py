@@ -1,8 +1,12 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpRequest
+from django import forms
 from . import util
 import markdown2
 
+class NewEntryForm(forms.Form):
+    title = forms.CharField()
+    content = forms.CharField(widget=forms.Textarea)
 
 def index(request):
     return render(request, "encyclopedia/index.html", {
@@ -36,6 +40,20 @@ def render_search(request):
         'keyword' : keyword
     })
 
-    
+def add_entry(request):
+    if (request.method == 'POST'):
+        form = NewEntryForm(request.POST)
+        if (form.is_valid()):
+            title = form.cleaned_data['title']
+            content = form.cleaned_data['content']
+            util.save_entry(title, content)
+        else:
+            return render(request, 'encyclopedia/add.html', {
+                'form' : form
+            })    
+        
+    return render(request, 'encyclopedia/add.html', {
+        'form' : NewEntryForm()
+    })
     
 
