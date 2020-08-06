@@ -74,7 +74,7 @@ def edit_entry(request):
         return save_form(request, editing=True)
     title = request.GET.get('q')
     content = util.get_entry(title)
-    form = NewEntryForm(initial={'title': title, 'content': title})
+    form = NewEntryForm(initial={'title': title, 'content': content})
     form.fields['title'].widget.attrs['readonly'] = True
     return render(request, 'encyclopedia/add.html', {
         'form' : form
